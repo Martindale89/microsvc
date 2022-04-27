@@ -1,0 +1,28 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: cluster-in-existing-vpc
+  region: eu-west-2
+
+vpc:
+  subnets:
+    private:
+        eu-west-2a: { id: subnet-0722ab1841df01173 }
+        eu-west-2b: { id: subnet-0f6a898f1c6848672 }
+        eu-west-2c: { id: subnet-0722ab1841df01173 }
+
+nodeGroups:
+  - name: standard-workers
+    labels: { role: workers }
+    instanceType: t3.medium
+    minSize: 1
+    maxSize: 5
+    desiredCapacity: 2
+    privateNetworking: true
+    ami: auto
+    # ssh:
+    #     allow: true # will use ~/.ssh/id_rsa.pub as default ssh key
+    iam:
+      withAddonPolicies:
+        imageBuilder: true
