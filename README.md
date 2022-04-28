@@ -22,6 +22,7 @@ Run:
 
 - Create cluster on AWS, adjust ```cluster.yml``` as required for vpc/subnets and nodes etc.
 - Run this command to stand cluster up ```eksctl create cluster -f cluster.yml```
+- Check cluster is running now using ```kubectl get svc``` and ```kubectl get nodes```
 
 
 - **IF YOU WANT TO DESTROY THE CLUSTER** run ```eksctl delete cluster -f cluster.yml```
