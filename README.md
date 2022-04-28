@@ -24,4 +24,4 @@ Run:
 - Run this command to stand cluster up ```eksctl create cluster -f cluster.yml```
 
 
-- **If you want to destroy cluster** run ```eksctl delete cluster -f cluster.yml```
+- **IF YOU WANT TO DESTROY THE CLUSTER** run ```eksctl delete cluster -f cluster.yml```
